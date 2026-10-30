@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pinterest Cleaner</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="head">
+      <span class="logo">P</span>
+      <h1>Pinterest Cleaner</h1>
+      <label class="master" title="Extension aktivieren">
+        <input type="checkbox" id="enabled" />
+        <span class="switch"></span>
+      </label>
+    </header>
+
+    <main class="panel">
+      <h2 class="panel-title">Einstellungen</h2>
+      <p class="stats" id="stats">Öffne Pinterest, um den Zähler zu sehen.</p>
+
+      <label class="row">
+        <input type="checkbox" id="hideAds" />
+        <span>Werbung und Promo ausblenden</span>
+      </label>
+
+      <label class="row">
+        <input type="checkbox" id="hideModules" />
+        <span>Nur echte Pins<br />(Karussells, Shopping-Module, Story-Kacheln ausblenden)</span>
+      </label>
+
+      <label class="row">
+        <input type="checkbox" id="hideSearchSuggestions" />
+        <span>Suchvorschläge ausblenden</span>
+      </label>
+
+      <label class="row">
+        <input type="checkbox" id="hideVideoPins" />
+        <span>Video-Pins ausblenden</span>
+      </label>
+
+      <label class="row">
+        <input type="checkbox" id="hideShoppablePins" />
+        <span>Shopping-Pins ausblenden <em class="tag">◇</em></span>
+      </label>
+
+      <label class="row">
+        <input type="checkbox" id="keywordsEnabled" />
+        <span>Pins mit diesen Wörtern<br />(mit Komma trennen) werden ausgeblendet:</span>
+      </label>
+
+      <div class="sub">
+        <div class="keyword-box">
+          <textarea id="keywords" rows="3" placeholder="zum Beispiel: etsy, anime, poster"></textarea>
+          <button id="save" title="Speichern">➤</button>
+        </div>
+        <p class="saved" id="savedHint">Gespeichert</p>
+      </div>
+    </main>
+
+    <footer class="foot">Werbung wird schon in den Daten entfernt – keine Lücken · v2.0.0</footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

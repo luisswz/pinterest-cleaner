@@ -1,0 +1,170 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 340px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 13px;
+  color: #1f1f1f;
+  background: #fff;
+  padding: 12px;
+}
+
+/* ---------- Kopfzeile ---------- */
+.head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #e60023;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+}
+
+.head h1 { font-size: 14px; font-weight: 700; flex: 1; }
+
+.master input { display: none; }
+.master .switch {
+  display: block;
+  width: 34px;
+  height: 20px;
+  border-radius: 10px;
+  background: #ccc;
+  position: relative;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+.master .switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.15s;
+}
+.master input:checked + .switch { background: #e60023; }
+.master input:checked + .switch::after { transform: translateX(14px); }
+
+/* ---------- Panel ---------- */
+.panel {
+  margin-top: 12px;
+  background: #f7f6ef;
+  border: 1px solid #ece9d8;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.panel-title {
+  font-size: 13px;
+  font-weight: 700;
+  background: #eceade;
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 5px 0;
+  cursor: pointer;
+  line-height: 1.35;
+}
+
+.row input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  margin-top: 1px;
+  border: 1px solid #b9c2d0;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+.row input[type="checkbox"]:checked {
+  background: #2f6fed;
+  border-color: #2f6fed;
+}
+.row input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: #fff;
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.tag { color: #e60023; font-style: normal; }
+
+.stats {
+  font-size: 12px;
+  color: #555;
+  margin: -4px 0 8px;
+}
+.stats strong { color: #e60023; }
+
+/* ---------- Untereinstellungen ---------- */
+.sub {
+  padding: 4px 0 8px 24px;
+  display: grid;
+  gap: 8px;
+}
+
+
+/* ---------- Keywords ---------- */
+.keyword-box {
+  position: relative;
+  background: #fff;
+  border: 1px solid #dcd8c6;
+  border-radius: 8px;
+  padding: 6px;
+}
+.keyword-box textarea {
+  width: 100%;
+  border: 0;
+  resize: vertical;
+  font: inherit;
+  outline: none;
+  padding-right: 34px;
+}
+.keyword-box button {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 26px;
+  height: 26px;
+  border: 0;
+  border-radius: 6px;
+  background: #2f6fed;
+  color: #fff;
+  cursor: pointer;
+}
+
+.saved {
+  font-size: 11px;
+  color: #1a9c53;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.saved.show { opacity: 1; }
+
+.foot {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 11px;
+  color: #999;
+}
